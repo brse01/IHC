@@ -4,9 +4,20 @@
   <title>Rola Bosta</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $("#menu a").click(function( e ){
+      e.preventDefault();
+      var href = $( this ).attr('href');
+      $("#content").load( href +" #content");
+    });
+  });
+  </script>
   <style>
   .container {
       padding: 80px 120px;
@@ -65,23 +76,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>      
-    </div>
-    
+    </div>    
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>        
-        <li><a href="#">A empresa</a></li>
-        <li><a href="#">Fale -Conosco</a></li>
-        <li><a href="#">Serviços</a></li>
-        <li><a href="#">Anunciantes</a></li>
-        <li><a href="#">Dicas e Serviços</a></li>
+      <ul id="menu" class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>        
+        <li><a href="empresa.html">A empresa</a></li>
+        <li><a href="fale_conosco.html">Fale -Conosco</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="anunciantes.html">Anunciantes</a></li>
+        <li><a href="dicas_sugestoes.html">Dicas e Serviços</a></li>
       </ul> 
       </ul>
-	</div>	 
+  </div>   
   </div>
 </nav>
-
-<div class="container-fluid text-center">    
+<div id="content" class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-14 text-left">     
  
@@ -158,7 +167,6 @@
       </div>
     </div>
   </div>
-  -->
 </div>
       </div>
     </div>
