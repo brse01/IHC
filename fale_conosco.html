@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <title>Rola Bosta</title>
   <meta charset="utf-8">
@@ -9,6 +9,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>  
+  <!--Inclusão do arquivo javaScript-->
+
+
   <style>
   .container {
       padding: 80px 120px;
@@ -84,40 +87,44 @@
 <div id="content">
 <h2>Entre em contato</h2>
 <p></p>
-<form>
+
+<form data-toggle="validator" role="form">
 <div class="form-group row">
   <label for="example-text-input" class="col-xs-2 col-form-label">Nome</label>
   <div class="col-xs-10">
-    <input class="form-control" type="text"  id="example-text-input">
+    <input class="form-control" type="text"  id="inputName" placeholder="Nome" required>
   </div>
 </div>
 <div class="form-group row">
-  <label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
+  <label  for="inputEmail" class="col-xs-2 col-form-label" >Email</label>
   <div class="col-xs-10">
-    <input class="form-control" type="email"  id="example-email-input">
+    <input class="form-control" type="email"  id="inputEmail" placeholder="Email" data-error="esse endereço de e-mail é inválido" required>
   </div>
 </div>
 <div class="form-group row">
-  <label for="example-tel-input" class="col-xs-2 col-form-label">Telefone</label>
+  <label for="inputTelefone" class="col-xs-2 col-form-label">Telefone</label>
   <div class="col-xs-10">
-    <input class="form-control" type="tel"  id="example-tel-input">
+    <input class="form-control" type="tel"  id="inputTelefone" pattern="\(\d{2}\)\d{4}-\d{4}" placeholder="(99)9999-9999" required>
   </div>
 </div>
 <div class="form-group row">
-  <label for="example-text-input" class="col-xs-2 col-form-label">Assunto</label>
+  <label for="assuntoInput" class="col-xs-2 col-form-label">Assunto</label>
   <div class="col-xs-10">
-    <input class="form-control" type="text"  id="example-text-input">
+    <input class="form-control" type="text"  id="assuntoInput" placeholder="Assunto" required>
   </div>
 </div>
 <div class="form-group row">  
-<label for="example-text-input" class="col-xs-2 col-form-label">Mensagem</label>
+<label for="mensagemTextArea" class="col-xs-2 col-form-label">Mensagem</label>
   <div class="col-xs-10"> 
-    <textarea class="form-control" text="textarea" ></textarea>  
+    <textarea class="form-control" text="textarea" id="mensagemTextArea" placeholder="Digite a mensagem" required></textarea>  
   </div>
 </div>
+<div class="form-group">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
 </form>
 <br>
-<button type="submit" class="btn btn-primary">Submit</button>
+
 <br>
 </div>
 </div><!-- /content -->
